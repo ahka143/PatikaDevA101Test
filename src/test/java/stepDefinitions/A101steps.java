@@ -108,10 +108,10 @@ public class A101steps {
         a101Pages.phoneNumberTextBox.sendKeys("5555555555");
         Select city = new Select(a101Pages.cityDDM);
         city.selectByIndex(2);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
         Select ilce = new Select(a101Pages.ilceDDM);
         ilce.selectByIndex(2);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
         Select mahalle = new Select(a101Pages.mahalleDDM);
         mahalle.selectByIndex(2);
         a101Pages.adresTextBox.sendKeys(faker.address().fullAddress());
@@ -123,7 +123,7 @@ public class A101steps {
         A101Pages a101Pages = new A101Pages();
 
         ReusableMethods.waitFor(3);
-        a101Pages.kaydetDevamEtButonu.click();
+        ReusableMethods.jsClick(a101Pages.kaydetDevamEtButonu);
     }
 
     @Then("Kullanici odeme ekranina gidildigini dogrular")
@@ -131,7 +131,7 @@ public class A101steps {
 
         A101Pages a101Pages=new A101Pages();
         Assert.assertTrue(a101Pages.kartIleOdemeText.isDisplayed());
-        ReusableMethods.waitFor(4);
+        ReusableMethods.waitFor(3);
     }
 
     @And("Kullanici sayfayi kapatir")

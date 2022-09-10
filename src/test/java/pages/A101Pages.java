@@ -25,14 +25,11 @@ public class A101Pages {
     @FindBy(partialLinkText = "Dizaltı Çorap")
     public WebElement dizAltiCorapButonu;
 
-    @FindBy(partialLinkText = "Kadın İç Giyim")
-    public WebElement kadinIcGiyimButonu;
 
     @FindBy (xpath = "//figure[@class='product-image ']")
     public List<WebElement> urunlerList;
 
-    @FindBy (xpath = "//li[@class='derin ']")
-    public List<WebElement> kategorilerList;
+
 
 
     @FindBy(xpath = "//div[@class='selected-variant-text']")
@@ -44,9 +41,6 @@ public class A101Pages {
     @FindBy(xpath = "//a[@class='go-to-shop']")
     public WebElement sepetiGoruntuleButonu;
 
-    //
-    @FindBy(partialLinkText = "Sepeti Onayla")
-    public WebElement SepetiOnaylaButonu;
 
     @FindBy(xpath = "//input[@name='user_email']")
     public WebElement emailTextBox;
