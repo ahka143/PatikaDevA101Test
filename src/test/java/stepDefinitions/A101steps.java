@@ -131,7 +131,7 @@ public class A101steps {
 
         A101Pages a101Pages=new A101Pages();
         Assert.assertTrue(a101Pages.kartIleOdemeText.isDisplayed());
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
     }
 
     @And("Kullanici sayfayi kapatir")
