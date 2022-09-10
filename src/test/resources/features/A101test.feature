@@ -16,5 +16,8 @@ Feature: Kullanici A101 sitesine uye olmadan alisveris yapabilir
     And Kullanici "ÜYE OLMADAN DEVAM ET" butonuna tiklar
     And Kullanici gecerli bir mail adresi girer ve Devam et butonuna tiklar
     And Kullanici "Yeni adres oluştur" butonuna tiklar
-    And Kullanici gerekli alanlari doldurur
+    And Kullanici gerekli alanlari doldurur ve kaydet butonuna tiklar
+    And Kullanici kaydet ve devam et butonununa tiklar
+    Then Kullanici odeme ekranina gidildigii dogrular
+    And Kullanici sayfayi kapatir
 

@@ -5,6 +5,7 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import pages.A101Pages;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -96,14 +97,44 @@ public class A101steps {
 
     }
 
-    @And("Kullanici gerekli alanlari doldurur")
-    public void kullaniciGerekliAlanlariDoldurur() {
+    @And("Kullanici gerekli alanlari doldurur ve kaydet butonuna tiklar")
+    public void kullaniciGerekliAlanlariDoldururVeKaydetButonunaTiklar() {
         Faker faker = new Faker();
         A101Pages a101Pages = new A101Pages();
 
         a101Pages.adresBasligiTextBox.sendKeys("EV");
         a101Pages.nameTextBox.sendKeys(faker.name().firstName());
         a101Pages.lastNameTextBox.sendKeys(faker.name().lastName());
-        a101Pages.phoneNumberTextBox.sendKeys(faker.phoneNumber().phoneNumber());
+        a101Pages.phoneNumberTextBox.sendKeys("5555555555");
+        Select city = new Select(a101Pages.cityDDM);
+        city.selectByIndex(2);
+        ReusableMethods.waitFor(1);
+        Select ilce = new Select(a101Pages.ilceDDM);
+        ilce.selectByIndex(2);
+        ReusableMethods.waitFor(1);
+        Select mahalle = new Select(a101Pages.mahalleDDM);
+        mahalle.selectByIndex(2);
+        a101Pages.adresTextBox.sendKeys(faker.address().fullAddress());
+        a101Pages.kaydetButonu.click();
+    }
+
+    @And("Kullanici kaydet ve devam et butonununa tiklar")
+    public void kullaniciKaydetVeDevamEtButonununaTiklar() {
+        A101Pages a101Pages = new A101Pages();
+
+        ReusableMethods.waitFor(3);
+        a101Pages.kaydetDevamEtButonu.click();
+    }
+
+    @Then("Kullanici odeme ekranina gidildigii dogrular")
+    public void kullaniciOdemeEkraninaGidildigiiDogrular() {
+
+        A101Pages a101Pages=new A101Pages();
+        Assert.assertTrue(a101Pages.kartIleOdemeText.isDisplayed());
+    }
+
+    @And("Kullanici sayfayi kapatir")
+    public void kullaniciSayfayiKapatir() {
+        Driver.closeDriver();
     }
 }

@@ -75,10 +75,16 @@ public class A101Pages {
     @FindBy(xpath = "//select[@name='district']")
     public WebElement mahalleDDM;
 
-    @FindBy(xpath = "//textarea[@aria-describedby='line-error']")
+    @FindBy(xpath = "//textarea[@name='line']")
     public WebElement adresTextBox;
 
     @FindBy(xpath = "//button[@class='button green js-set-country js-prevent-emoji']")
     public WebElement kaydetButonu;
+
+    @FindBy(xpath = "//button[@class='button block green js-proceed-button']")
+    public WebElement kaydetDevamEtButonu;
+
+    @FindBy(xpath = "//div[@class='payment-tab payment-tab-masterpass js-payment-tab active']")
+    public WebElement kartIleOdemeText;
 
 }
