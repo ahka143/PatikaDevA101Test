@@ -126,11 +126,12 @@ public class A101steps {
         a101Pages.kaydetDevamEtButonu.click();
     }
 
-    @Then("Kullanici odeme ekranina gidildigii dogrular")
-    public void kullaniciOdemeEkraninaGidildigiiDogrular() {
+    @Then("Kullanici odeme ekranina gidildigini dogrular")
+    public void kullaniciOdemeEkraninaGidildiginiDogrular() {
 
         A101Pages a101Pages=new A101Pages();
         Assert.assertTrue(a101Pages.kartIleOdemeText.isDisplayed());
+        ReusableMethods.waitFor(4);
     }
 
     @And("Kullanici sayfayi kapatir")
