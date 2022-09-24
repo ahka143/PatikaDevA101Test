@@ -165,4 +165,11 @@ public class A101MobileStepdefs {
     public void kullaniciMobilSayfayiKapatir() {
         driver.quit();
     }
+
+    @And("Kullanici Kargo sirketini secer")
+    public void kullaniciKargoSirketiniSecer() {
+
+        ReusableMethods.waitFor(2);
+        driver.findElement(By.xpath("(//label[@class='js-checkout-cargo-item'])[1]")).click();
+    }
 }

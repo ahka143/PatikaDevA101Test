@@ -18,7 +18,7 @@ Feature: Kullanici A101 mobile sitesine uye olmadan alisveris yapabilir
     And Kullanici mobilde yeni adres olustur butonuna tiklar
     And Kullanici mobilde yeni adres bilgilerini girer ve kaydet butonuna tiklar
     And Kullanici mobil "KAYDET" butonuna tiklar
-    And Kullanici mobil "Sendeo" butonuna tiklar
+    And Kullanici Kargo sirketini secer
     And Kullanici mobil "Kaydet ve Devam Et" butonuna tiklar
     Then Kullanici odeme ekraninda oldugunu dogrular
     And Kullanici mobil sayfayi kapatir
