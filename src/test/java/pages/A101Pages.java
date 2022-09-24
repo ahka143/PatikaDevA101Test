@@ -31,7 +31,6 @@ public class A101Pages {
 
 
 
-
     @FindBy(xpath = "//div[@class='selected-variant-text']")
     public WebElement secilenRenkText;
 
