@@ -12,9 +12,8 @@ public class ConfigReader {
 
         try {
             FileInputStream fis=new FileInputStream(dosyaYolu);
-            // fis dosyayolunu tanimladigimiz configuration.properties dosyasini okudu
             properties=new Properties();
-            properties.load(fis); // fis'in okudugu bilgileri properties'e yukledi
+            properties.load(fis);
 
 
 

@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         plugin={"html:target/cucumber-reports.html"},
         features = "src/test/resources/features",
         glue="stepDefinitions",
-        tags= "@Mobile",
+        tags= "@Web",
         dryRun = false
 
 )

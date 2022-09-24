@@ -1,6 +1,6 @@
 Feature: Kullanici A101 sitesine uye olmadan alisveris yapabilir
 
-  @Test1
+  @Web
   Scenario: TC01 Kullanici A101 sitesine uye olmadan alisveris yapabilir
     Given Kulllanici "a101Url" anasayfasina gider
     And Kullanici cerezleri kabul eder
