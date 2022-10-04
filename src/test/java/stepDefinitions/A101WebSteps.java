@@ -4,11 +4,18 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 import pages.A101Pages;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class A101WebSteps {
 
@@ -114,7 +121,9 @@ public class A101WebSteps {
         Select mahalle = new Select(a101Pages.mahalleDDM);
         mahalle.selectByIndex(2);
         a101Pages.adresTextBox.sendKeys(faker.address().fullAddress());
-        a101Pages.kaydetButonu.click();
+        Actions actions=new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.TAB,Keys.ENTER).perform();
+
     }
 
     @And("Kullanici kaydet ve devam et butonununa tiklar")
@@ -128,7 +137,7 @@ public class A101WebSteps {
     @Then("Kullanici odeme ekranina gidildigini dogrular")
     public void kullaniciOdemeEkraninaGidildiginiDogrular() {
 
-        A101Pages a101Pages=new A101Pages();
+        A101Pages a101Pages = new A101Pages();
         Assert.assertTrue(a101Pages.kartIleOdemeText.isDisplayed());
         ReusableMethods.waitFor(2);
     }
@@ -136,5 +145,41 @@ public class A101WebSteps {
     @And("Kullanici sayfayi kapatir")
     public void kullaniciSayfayiKapatir() {
         Driver.closeDriver();
+    }
+
+    @Test
+    public void test01() {
+
+        //Verilen bir list içerisinde (tekrarsız elemanlardan oluşan),
+        //istenen toplama eşit olan her bir
+        //sublisti yazdıran bir program yazınız.
+        //
+        //Örnek 1:
+        //List = {1,2,3,4,5,6};
+        //istenen toplam: 8
+        //1- {2,6}
+        //2- {3,5}
+        //3- {1,3,4}
+        //
+        //Örnek 2:
+        //List = {5,10,15,20};
+        //istenen toplam: 30
+        //1- {5,10,15}
+        //2- {10,20}
+
+
+        List<Integer> list1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+        List<Integer> list2 = new ArrayList<>(Arrays.asList(5, 10, 15, 20));
+        int istenenSayi1 = 8;
+        int istenenSayi2 = 30;
+
+        for (int i = 0; i <list1.size() ; i++) {
+            for (int j = 0; j <list1.size() ; j++) {
+               while (true){
+                   
+               }
+            }
+        }
+
     }
 }
