@@ -121,8 +121,8 @@ public class A101WebSteps {
         Select mahalle = new Select(a101Pages.mahalleDDM);
         mahalle.selectByIndex(2);
         a101Pages.adresTextBox.sendKeys(faker.address().fullAddress());
-        Actions actions=new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.TAB,Keys.ENTER).perform();
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.TAB, Keys.ENTER).perform();
 
     }
 
@@ -150,36 +150,22 @@ public class A101WebSteps {
     @Test
     public void test01() {
 
-        //Verilen bir list içerisinde (tekrarsız elemanlardan oluşan),
-        //istenen toplama eşit olan her bir
-        //sublisti yazdıran bir program yazınız.
-        //
-        //Örnek 1:
-        //List = {1,2,3,4,5,6};
-        //istenen toplam: 8
-        //1- {2,6}
-        //2- {3,5}
-        //3- {1,3,4}
-        //
-        //Örnek 2:
-        //List = {5,10,15,20};
-        //istenen toplam: 30
-        //1- {5,10,15}
-        //2- {10,20}
+        findOddNumber(10,-3);
+    }
 
+    public static void findOddNumber(int min_value, int max_value) {
 
-        List<Integer> list1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
-        List<Integer> list2 = new ArrayList<>(Arrays.asList(5, 10, 15, 20));
-        int istenenSayi1 = 8;
-        int istenenSayi2 = 30;
-
-        for (int i = 0; i <list1.size() ; i++) {
-            for (int j = 0; j <list1.size() ; j++) {
-               while (true){
-                   
-               }
+     if (max_value<min_value){
+         max_value=max_value+min_value;
+         min_value=max_value-min_value;
+         max_value=max_value-min_value;
+     }
+        for (int i = min_value; i <=max_value ; i++) {
+            if (i%2!=0){
+                System.out.print(i+" ");
             }
         }
-
     }
+
+
 }
